@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <NavBar />
     <Books :books='books' />
   </div>
 </template>
 
 <script>
+import NavBar from './components/NavBar'
 import Books from './components/Books'
 
 export default {
   name: 'App',
   components: {
-    Books
+    Books,
+    NavBar
   },
   data () {
     return {
