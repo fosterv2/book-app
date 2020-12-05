@@ -1,15 +1,11 @@
 <template>
   <div id="app">
-    <Books
-      v-for='book in books'
-      :key='book.id'
-      :book='book'
-    />
+    <Books :books='books' />
   </div>
 </template>
 
 <script>
-import Books from './components/Books.vue'
+import Books from './components/Books'
 
 export default {
   name: 'App',

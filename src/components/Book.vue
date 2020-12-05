@@ -1,30 +1,23 @@
 <template>
-  <div class="books">
-    <Book
-      v-for='book in books'
-      :key='book.id'
-      :book='book'
-    />
+  <div class="book">
+    <h3>{{ book.name }}</h3>
+    <img :src='book.img_url'>
+    <p>By: {{ book.author_name }}</p>
   </div>
 </template>
 
 <script>
-import Book from './Book'
-
 export default {
-  name: 'Books',
-  components: {
-    Book
-  },
+  name: 'Book',
   props: {
-    books: Array
+    book: Object
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
+/* h3 {
   margin: 40px 0 0;
 }
 ul {
@@ -37,5 +30,5 @@ li {
 }
 a {
   color: #42b983;
-}
+} */
 </style>
