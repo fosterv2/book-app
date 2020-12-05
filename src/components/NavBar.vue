@@ -1,14 +1,15 @@
 <template>
   <div class="nav-bar">
+    <!-- <img src=""> -->
     <p>About</p>
     <p>Home</p>
-    <p>Sig In</p>
+    <p>Sign In</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Book'
+  name: 'NavBar'
 }
 </script>
 
@@ -17,5 +18,10 @@ export default {
 .nav-bar {
   display: flex;
   justify-content: space-around;
+  background: gray;
+  position: fixed;
+  width: 100%;
+  margin-top: -60px;
+  margin-left: -8px;
 }
 </style>
