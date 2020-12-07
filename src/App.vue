@@ -1,31 +1,20 @@
 <template>
   <div id="app">
     <NavBar />
-    <Books :books='books' />
+    <router-view></router-view>
+    <!-- <Books /> -->
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar'
-import Books from './components/Books'
+// import Books from './components/Books'
 
 export default {
   name: 'App',
   components: {
-    Books,
+    // Books,
     NavBar
-  },
-  data () {
-    return {
-      books: []
-    }
-  },
-  mounted: function () {
-    fetch('http://localhost:3000/books')
-      .then(resp => resp.json())
-      .then(books => {
-        this.books = books
-      })
   }
 }
 </script>

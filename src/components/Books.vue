@@ -16,8 +16,17 @@ export default {
   components: {
     Book
   },
-  props: {
-    books: Array
+  data () {
+    return {
+      books: []
+    }
+  },
+  mounted: function () {
+    fetch('http://localhost:3000/books')
+      .then(resp => resp.json())
+      .then(books => {
+        this.books = books
+      })
   }
 }
 </script>
