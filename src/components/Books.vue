@@ -1,6 +1,6 @@
 <template>
   <div class="books">
-    <Book
+    <BookCard
       v-for='book in books'
       :key='book.id'
       :book='book'
@@ -9,24 +9,15 @@
 </template>
 
 <script>
-import Book from './Book'
+import BookCard from './BookCard'
 
 export default {
   name: 'Books',
   components: {
-    Book
+    BookCard
   },
-  data () {
-    return {
-      books: []
-    }
-  },
-  mounted: function () {
-    fetch('http://localhost:3000/books')
-      .then(resp => resp.json())
-      .then(books => {
-        this.books = books
-      })
+  props: {
+    books: Array
   }
 }
 </script>
