@@ -1,8 +1,11 @@
 <template>
   <div class="book">
-    <h3>{{ book.name }}</h3>
-    <img :src='book.img_url'>
-    <p>By: {{ book.author_name }}</p>
+    <h1>I'm for a single Book</h1>
+    <!-- <h1>{{ book.name }}</h1>
+    <div name="book-info">
+      <img :src='book.img_url'>
+      <p>By: {{ book.author_name }}</p>
+    </div> -->
   </div>
 </template>
 
@@ -17,10 +20,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.book {
-  width: 250px;
-  border: 2px solid #2c3e50;
-  border-radius: 7%;
-  margin: 10px;
+.book-info {
+  display: flex;
 }
 </style>
