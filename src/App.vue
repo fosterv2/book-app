@@ -37,4 +37,17 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+a {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+a:visited {
+  color: #2c3e50;
+}
+
+a:hover {
+  color: black;
+}
 </style>

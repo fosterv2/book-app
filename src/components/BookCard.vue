@@ -1,8 +1,10 @@
 <template>
   <div class="book-card">
+    <router-link :to='path'>
     <h3>{{ book.name }}</h3>
     <img :src='book.img_url'>
     <p>By: {{ book.author_name }}</p>
+    </router-link>
   </div>
 </template>
 
@@ -11,6 +13,11 @@ export default {
   name: 'BookCard',
   props: {
     book: Object
+  },
+  computed: {
+    path: function () {
+      return `/books/${this.book.id}`
+    }
   }
 }
 </script>
