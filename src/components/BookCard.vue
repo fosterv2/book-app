@@ -1,7 +1,7 @@
 <template>
   <div class="book-card">
     <router-link :to='path'>
-    <h3>{{ book.name }}</h3>
+    <h3>{{ book.title }}</h3>
     <img :src='book.img_url'>
     <p>By: {{ book.author_name }}</p>
     </router-link>

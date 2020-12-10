@@ -1,10 +1,11 @@
 <template>
   <div class="book" v-if='book'>
     <!-- <h1>I'm for a single Book</h1> -->
-    <h1>{{ book.name }}</h1>
+    <h1>{{ book.title }}</h1>
     <div name="book-info">
       <img :src='book.img_url'>
       <p>By: {{ book.author_name }}</p>
+      <p>{{ book.blurb }}</p>
     </div>
   </div>
   <div v-else>
