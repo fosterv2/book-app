@@ -2,8 +2,8 @@
   <div class="nav-bar">
     <!-- <img src=""> -->
     <p><router-link to="/about">About</router-link></p>
-    <p><router-link to="/home">Home</router-link></p>
-    <p><router-link to="/home">Sign In</router-link></p>
+    <p><router-link to="/">Home</router-link></p>
+    <p><router-link to="/">Sign In</router-link></p>
   </div>
 </template>
 
