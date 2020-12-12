@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>About Page</h1>
+    <img src="https://i.imgur.com/YtTSpfV.png">
     <p>Some info on the app</p>
   </div>
 </template>

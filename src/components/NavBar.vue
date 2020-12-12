@@ -1,6 +1,7 @@
 <template>
   <div class="nav-bar">
-    <!-- <img src=""> -->
+    <!-- logo url: logomakr.com/9ATTcU -->
+    <router-link to="/"><img src="https://i.imgur.com/YtTSpfV.png"></router-link>
     <p><router-link to="/about">About</router-link></p>
     <p><router-link to="/">Home</router-link></p>
     <p><router-link to="/">Sign In</router-link></p>
@@ -18,10 +19,19 @@ export default {
 .nav-bar {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   background: gray;
   position: fixed;
   width: 100%;
   margin-top: -60px;
   margin-left: -8px;
+}
+
+a {
+  margin-left: 10px;
+}
+
+img {
+  height: 55px;
 }
 </style>
