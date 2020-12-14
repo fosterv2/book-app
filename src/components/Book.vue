@@ -17,12 +17,19 @@ export default {
   name: 'Book',
   props: {
     books: Array,
-    id: String
+    bookId: String
   },
   computed: {
     book: function () {
-      return this.books.find(bk => bk.id == this.id)
+      return this.books.find(bk => bk.id == this.bookId)
     }
+  },
+  mounted: function () {
+    fetch(`http://localhost:3000/reviews/${this.bookId}`)
+      .then(resp => resp.json())
+      .then(reviews => {
+        this.reviews = reviews
+      })
   }
 }
 </script>

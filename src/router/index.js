@@ -19,7 +19,7 @@ export default new Router({
       component: About
     },
     {
-      path: '/books/:id',
+      path: '/books/:bookId',
       name: 'Book',
       component: Book,
       props: true
