@@ -5,6 +5,14 @@
     <div class="book-info">
       <img :src='book.img_url'>
       <p>{{ book.blurb }}</p>
+      <div>
+        <h3>Reviews</h3>
+        <ReviewCard
+          v-for='review in reviews'
+          :key='review.id'
+          :review='review'
+        />
+      </div>
     </div>
   </div>
   <div v-else>
@@ -13,11 +21,21 @@
 </template>
 
 <script>
+import ReviewCard from './ReviewCard'
+
 export default {
   name: 'Book',
   props: {
     books: Array,
     bookId: String
+  },
+  components: {
+    ReviewCard
+  },
+  data () {
+    return {
+      reviews: []
+    }
   },
   computed: {
     book: function () {
