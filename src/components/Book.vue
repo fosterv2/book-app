@@ -5,14 +5,14 @@
     <div class="book-info">
       <img :src='book.img_url'>
       <p>{{ book.blurb }}</p>
-      <div>
-        <h3>Reviews</h3>
-        <ReviewCard
-          v-for='review in reviews'
-          :key='review.id'
-          :review='review'
-        />
-      </div>
+    </div>
+    <div class="reviews">
+      <h3>Reviews</h3>
+      <ReviewCard
+        v-for='review in reviews'
+        :key='review.id'
+        :review='review'
+      />
     </div>
   </div>
   <div v-else>
