@@ -6,13 +6,16 @@
       <img :src='book.img_url'>
       <p>{{ book.blurb }}</p>
     </div>
-    <div class="reviews">
-      <h3>Reviews</h3>
-      <ReviewCard
-        v-for='review in reviews'
-        :key='review.id'
-        :review='review'
-      />
+    <div class="lower-book">
+      <div class="reviews">
+        <h3>Reviews</h3>
+        <ReviewCard
+          v-for='review in reviews'
+          :key='review.id'
+          :review='review'
+        />
+      </div>
+      <button>Add Review</button>
     </div>
   </div>
   <div v-else>
@@ -74,4 +77,9 @@ img {
 .book-info p {
   margin: 50px;
 }
+
+/* .lower-book {
+  display: flex;
+  justify-content: space-around;
+} */
 </style>

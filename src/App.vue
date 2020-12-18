@@ -50,4 +50,10 @@ a:visited {
 a:hover {
   color: black;
 }
+
+button {
+  background-color: grey;
+  font-size: 15px;
+  border-radius: 5px;
+}
 </style>
