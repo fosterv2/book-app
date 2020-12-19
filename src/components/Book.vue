@@ -15,7 +15,8 @@
           :review='review'
         />
       </div>
-      <button>Add Review</button>
+      <ReviewForm :bookName="book.title" v-if="formCondition" />
+      <button v-else v-on:click="formCondition = !formCondition">Add Review</button>
     </div>
   </div>
   <div v-else>
@@ -25,6 +26,7 @@
 
 <script>
 import ReviewCard from './ReviewCard'
+import ReviewForm from './ReviewForm'
 
 export default {
   name: 'Book',
@@ -33,11 +35,13 @@ export default {
     bookId: String
   },
   components: {
-    ReviewCard
+    ReviewCard,
+    ReviewForm
   },
   data () {
     return {
-      reviews: []
+      reviews: [],
+      formCondition: false
     }
   },
   computed: {
