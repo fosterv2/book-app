@@ -7,6 +7,8 @@
       <p>{{ book.blurb }}</p>
     </div>
     <div class="lower-book">
+      <ReviewForm v-if="formCondition" :bookName="book.title" />
+      <button v-else v-on:click="toggleFormCondition">Add Review</button>
       <div class="reviews">
         <h3>Reviews</h3>
         <ReviewCard
@@ -15,8 +17,6 @@
           :review='review'
         />
       </div>
-      <ReviewForm :bookName="book.title" v-if="formCondition" />
-      <button v-else v-on:click="formCondition = !formCondition">Add Review</button>
     </div>
   </div>
   <div v-else>
