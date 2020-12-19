@@ -7,7 +7,7 @@
       <p>{{ book.blurb }}</p>
     </div>
     <div class="lower-book">
-      <ReviewForm v-if="formCondition" :bookName="book.title" />
+      <ReviewForm v-if="formCondition" :bookName="book.title" :handleBack="toggleFormCondition" />
       <button v-else v-on:click="toggleFormCondition">Add Review</button>
       <div class="reviews">
         <h3>Reviews</h3>
@@ -55,6 +55,11 @@ export default {
       .then(reviews => {
         this.reviews = reviews
       })
+  },
+  methods: {
+    toggleFormCondition: function () {
+      this.formCondition = !this.formCondition
+    }
   }
 }
 </script>

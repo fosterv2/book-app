@@ -1,6 +1,6 @@
 <template>
   <div class="review-form">
-    <p>X</p>
+    <p v-on:click="handleBack">X</p>
     <h3>My Review for {{ bookName }}</h3>
     <form>
       <label>Review Title</label><br/>
@@ -19,7 +19,8 @@
 export default {
   name: 'ReviewForm',
   props: {
-    bookName: String
+    bookName: String,
+    handleBack: Function
   },
   data () {
     return {
