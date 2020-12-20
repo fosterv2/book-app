@@ -7,7 +7,13 @@
       <p>{{ book.blurb }}</p>
     </div>
     <div class="lower-book">
-      <ReviewForm v-if="formCondition" :bookName="book.title" :handleBack="toggleFormCondition" />
+      <ReviewForm
+        v-if="formCondition"
+        :bookName="book.title"
+        :handleBack="toggleFormCondition"
+        :bookId="book.id"
+        :submitReview="submitReview"
+      />
       <button v-else v-on:click="toggleFormCondition">Add Review</button>
       <div class="reviews">
         <h3>Reviews</h3>
@@ -59,6 +65,21 @@ export default {
   methods: {
     toggleFormCondition: function () {
       this.formCondition = !this.formCondition
+    },
+    submitReview: function (body) {
+      this.formCondition = false
+      fetch(`http://localhost:3000/reviews`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(body)
+      })
+      .then(resp => resp.json())
+      .then(review => {
+        this.reviews.push(review)
+      })
     }
   }
 }

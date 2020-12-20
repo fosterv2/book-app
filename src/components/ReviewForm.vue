@@ -10,7 +10,7 @@
       <label>Rating</label><br/>
       <input v-model="rating" type="number" placeholder="Enter review rating"><br/>
       <br/>
-      <button>Post Review</button>
+      <button v-on:click="handleSubmit">Post Review</button>
     </form>
   </div>
 </template>
@@ -20,13 +20,27 @@ export default {
   name: 'ReviewForm',
   props: {
     bookName: String,
-    handleBack: Function
+    handleBack: Function,
+    bookId: Number,
+    submitReview: Function
   },
   data () {
     return {
       title: "",
       content: "",
       rating: ""
+    }
+  },
+  methods: {
+    handleSubmit: function (e) {
+      e.preventDefault()
+      this.submitReview({
+        title: this.title,
+        content: this.content,
+        rating: this.rating,
+        book_id: this.bookId,
+        user_id: 1  // need to add this when there are users
+      })
     }
   }
 }
