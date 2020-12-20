@@ -56,4 +56,14 @@ button {
   font-size: 15px;
   border-radius: 5px;
 }
+
+input, textarea {
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #2c3e50;
+  border-radius: 5px;
+  width: 90%;
+  outline: none;
+  margin-bottom: 10px;
+}
 </style>

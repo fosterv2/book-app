@@ -6,7 +6,7 @@
       <label>Review Title</label><br/>
       <input v-model="title" placeholder="Enter review title"><br/>
       <label>Review</label><br/>
-      <input v-model="content" placeholder="Enter review content"><br/>
+      <textarea v-model="content" placeholder="Enter review content"></textarea><br/>
       <label>Rating</label><br/>
       <input v-model="rating" type="number" placeholder="Enter review rating"><br/>
       <br/>
