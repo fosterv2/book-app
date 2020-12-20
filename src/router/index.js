@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Books from '../components/Books'
-import About from '../components/About'
-import Book from '../components/Book'
+import Books from '../pages/Books'
+import About from '../pages/About'
+import Book from '../pages/Book'
 
 Vue.use(Router)
 

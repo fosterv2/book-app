@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import BookCard from './BookCard'
+import BookCard from '../components/BookCard'
 
 export default {
   name: 'Books',

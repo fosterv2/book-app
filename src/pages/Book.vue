@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import ReviewCard from './ReviewCard'
-import ReviewForm from './ReviewForm'
+import ReviewCard from '../components/ReviewCard'
+import ReviewForm from '../components/ReviewForm'
 
 export default {
   name: 'Book',
