@@ -3,7 +3,8 @@
     <h1>{{ book.title }}</h1>
     <h4>By: {{ book.author_name }}</h4>
     <div class="book-info">
-      <img :src='book.img_url'>
+      <img v-if="defaultPicture" src="https://i.imgur.com/YtTSpfV.png">
+      <img v-else :src='book.img_url'>
       <p>{{ book.blurb }}</p>
     </div>
     <div class="lower-book">
@@ -53,6 +54,9 @@ export default {
   computed: {
     book: function () {
       return this.books.find(bk => bk.id == this.bookId)
+    },
+    defaultPicture: function () {
+      return !this.book.img_url.match(/http/)
     }
   },
   mounted: function () {
@@ -106,6 +110,10 @@ img {
 
 .book-info p {
   margin: 50px;
+}
+
+img {
+  max-width: 175px;
 }
 
 /* .lower-book {
