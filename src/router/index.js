@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Books from '../pages/Books'
 import About from '../pages/About'
 import Book from '../pages/Book'
+import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
 
 Vue.use(Router)
@@ -23,6 +24,12 @@ export default new Router({
       path: '/books/:bookId',
       name: 'Book',
       component: Book,
+      props: true
+    },
+    {
+      path: '/signin',
+      name: 'SignIn',
+      component: SignIn,
       props: true
     },
     {

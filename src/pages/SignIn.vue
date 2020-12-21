@@ -1,31 +1,25 @@
 <template>
   <div class="sign-up">
-    <h3>Sign Up</h3>
+    <h3>Sign In</h3>
     <form>
-      <label>Name</label><br/>
-      <input v-model="name" placeholder="Enter full name"><br/>
       <label>Username</label><br/>
       <input v-model="username" placeholder="Enter desired username"><br/>
       <label>Password</label><br/>
       <input v-model="password" type="password" placeholder="Enter password"><br/>
-      <label>Password Confirmation</label><br/>
-      <input v-model="passwordConf" type="password" placeholder="Enter password confirmation"><br/>
       <br/>
-      <button v-on:click="handleSubmit">Sign Up</button>
+      <button v-on:click="handleSubmit">Sign In</button>
     </form>
-    <p>Or <router-link to="/signin">Sign In</router-link></p>
+    <p>Or <router-link to="/signup">Sign Up</router-link></p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SignUp',
+  name: 'SignIn',
   data () {
     return {
-      name: "",
       username: "",
-      password: "",
-      passwordConf: ""
+      password: ""
     }
   },
   methods: {
