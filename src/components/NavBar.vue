@@ -4,7 +4,7 @@
     <router-link to="/"><img src="https://i.imgur.com/YtTSpfV.png"></router-link>
     <p><router-link to="/about">About</router-link></p>
     <p><router-link to="/">Home</router-link></p>
-    <p><router-link to="/">Sign In</router-link></p>
+    <p><router-link to="/signup">Sign In</router-link></p>
   </div>
 </template>
 
