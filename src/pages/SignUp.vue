@@ -31,7 +31,30 @@ export default {
   methods: {
     handleSubmit: function (e) {
       e.preventDefault()
-      console.log("Submitted!")
+      const body = {
+        name: this.name,
+        username: this.username,
+        password: this.password,
+        password_confirmation: this.passwordConf
+      }
+      fetch(`http://localhost:3000/users`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(body)
+      })
+      .then(resp => resp.json())
+      .then(response => {
+        if (response.error) {
+          // do someting for errors
+        } else {
+          // props.setUser(response.user)
+          localStorage.setItem("token", response.jwt)
+          // props.history.push('/')
+        }
+      })
     }
   }
 }
