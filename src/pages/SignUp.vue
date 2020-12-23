@@ -3,13 +3,13 @@
     <h3>Sign Up</h3>
     <form>
       <label>Name</label><br/>
-      <input v-model="name" placeholder="Enter full name"><br/>
+      <input v-model="name" name="name" placeholder="Enter full name"><br/>
       <label>Username</label><br/>
-      <input v-model="username" placeholder="Enter desired username"><br/>
+      <input v-model="username" name="username" placeholder="Enter desired username"><br/>
       <label>Password</label><br/>
-      <input v-model="password" type="password" placeholder="Enter password"><br/>
+      <input v-model="password" type="password" name="password" placeholder="Enter password"><br/>
       <label>Password Confirmation</label><br/>
-      <input v-model="passwordConf" type="password" placeholder="Enter password confirmation"><br/>
+      <input v-model="passwordConf" type="password" name="password-confirmation" placeholder="Enter password confirmation"><br/>
       <br/>
       <button v-on:click="handleSubmit">Sign Up</button>
     </form>
@@ -52,7 +52,7 @@ export default {
         } else {
           // props.setUser(response.user)
           localStorage.setItem("token", response.jwt)
-          // props.history.push('/')
+          this.$router.push('/')
         }
       })
     }

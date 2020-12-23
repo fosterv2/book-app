@@ -3,9 +3,9 @@
     <h3>Sign In</h3>
     <form>
       <label>Username</label><br/>
-      <input v-model="username" placeholder="Enter desired username"><br/>
+      <input v-model="username" name="username" placeholder="Enter desired username"><br/>
       <label>Password</label><br/>
-      <input v-model="password" type="password" placeholder="Enter password"><br/>
+      <input v-model="password" type="password" name="password" placeholder="Enter password"><br/>
       <br/>
       <button v-on:click="handleSubmit">Sign In</button>
     </form>
@@ -44,7 +44,7 @@ export default {
         } else {
           // props.setUser(response.user)
           localStorage.setItem("token", response.jwt)
-          // props.history.push('/')
+          this.$router.push('/')
         }
       })
     }
