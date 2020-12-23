@@ -15,7 +15,8 @@ export default {
   },
   data () {
     return {
-      books: []
+      books: [],
+      user: {}
     }
   },
   mounted: function () {
@@ -24,6 +25,18 @@ export default {
       .then(books => {
         this.books = books
       })
+    const token = localStorage.getItem("token")
+    if (token) {
+      fetch(`http://localhost:3000/auth`, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: token
+        }
+      })
+      .then(resp => resp.json())
+      .then(console.log)
+    }
   }
 }
 </script>

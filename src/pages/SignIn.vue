@@ -3,7 +3,7 @@
     <h3>Sign In</h3>
     <form>
       <label>Username</label><br/>
-      <input v-model="username" name="username" placeholder="Enter desired username"><br/>
+      <input v-model="username" name="username" placeholder="Enter username"><br/>
       <label>Password</label><br/>
       <input v-model="password" type="password" name="password" placeholder="Enter password"><br/>
       <br/>
@@ -29,7 +29,7 @@ export default {
         username: this.username,
         password: this.password
       }
-      fetch(`http://localhost:3000/users`, {
+      fetch(`http://localhost:3000/auth`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
