@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <NavBar />
-    <router-view :books='books'></router-view>
+    <NavBar :user='user' :signOut='signOut' />
+    <router-view :books='books' :user='user'></router-view>
   </div>
 </template>
 
@@ -17,6 +17,12 @@ export default {
     return {
       books: [],
       user: {}
+    }
+  },
+  methods: {
+    signOut: function () {
+      localStorage.removeItem("token")
+      this.user = {}
     }
   },
   mounted: function () {
@@ -35,7 +41,7 @@ export default {
         }
       })
       .then(resp => resp.json())
-      .then(console.log)
+      .then(response => this.user = response.user)
     }
   }
 }

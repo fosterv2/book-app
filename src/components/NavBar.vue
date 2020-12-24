@@ -4,13 +4,24 @@
     <router-link to="/"><img src="https://i.imgur.com/YtTSpfV.png"></router-link>
     <p><router-link to="/about">About</router-link></p>
     <p><router-link to="/">Home</router-link></p>
-    <p><router-link to="/signin">Sign In</router-link></p>
+    <p v-if="user.id" v-on:click="signOut"><router-link to="/signin">Sign Out</router-link></p>
+    <p v-else><router-link to="/signin">Sign In</router-link></p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  props: {
+    user: Object,
+    signOut: Function
+  }
+  // methods: {
+  //   signOut: function () {
+  //     localStorage.removeItem("token")
+  //     this.clearUser()
+  //   }
+  // }
 }
 </script>
 
