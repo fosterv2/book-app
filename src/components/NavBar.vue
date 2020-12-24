@@ -16,12 +16,6 @@ export default {
     user: Object,
     signOut: Function
   }
-  // methods: {
-  //   signOut: function () {
-  //     localStorage.removeItem("token")
-  //     this.clearUser()
-  //   }
-  // }
 }
 </script>
 

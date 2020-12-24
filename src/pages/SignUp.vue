@@ -20,6 +20,9 @@
 <script>
 export default {
   name: 'SignUp',
+  props: {
+    setUser: Function
+  },
   data () {
     return {
       name: "",
@@ -50,7 +53,7 @@ export default {
         if (response.error) {
           // do someting for errors
         } else {
-          // props.setUser(response.user)
+          this.setUser(response.user)
           localStorage.setItem("token", response.jwt)
           this.$router.push('/')
         }
