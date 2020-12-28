@@ -14,6 +14,7 @@
         :handleBack="toggleFormCondition"
         :bookId="book.id"
         :submitReview="submitReview"
+        :error="error"
       />
       <button v-else v-on:click="toggleFormCondition">Add Review</button>
       <div class="reviews">
@@ -49,7 +50,8 @@ export default {
   data () {
     return {
       reviews: [],
-      formCondition: false
+      formCondition: false,
+      error: false
     }
   },
   computed: {
@@ -72,7 +74,6 @@ export default {
       this.formCondition = !this.formCondition
     },
     submitReview: function (body) {
-      this.formCondition = false
       fetch(`${BASE_URL}/reviews`, {
         method: "POST",
         headers: {
@@ -82,8 +83,13 @@ export default {
         body: JSON.stringify(body)
       })
       .then(resp => resp.json())
-      .then(review => {
-        this.reviews.push(review)
+      .then(response => {
+        if (response.error) {
+          this.error = true
+        } else {
+          this.formCondition = false
+          this.reviews.push(response)
+        }
       })
     }
   }

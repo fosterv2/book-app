@@ -90,4 +90,8 @@ input, textarea {
   outline: none;
   margin-bottom: 10px;
 }
+
+.error {
+  color: maroon
+}
 </style>

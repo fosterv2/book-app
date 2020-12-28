@@ -1,6 +1,7 @@
 <template>
   <div class="sign-up">
     <h3>Sign In</h3>
+    <h4 class="error" v-if="error">Wrong Inputs</h4>
     <form>
       <label>Username</label><br/>
       <input v-model="username" name="username" placeholder="Enter username"><br/>
@@ -24,7 +25,8 @@ export default {
   data () {
     return {
       username: "",
-      password: ""
+      password: "",
+      error: false
     }
   },
   methods: {
@@ -45,7 +47,7 @@ export default {
       .then(resp => resp.json())
       .then(response => {
         if (response.error) {
-          // do someting for errors
+          this.error = true
         } else {
           this.setUser(response.user)
           localStorage.setItem("token", response.jwt)

@@ -2,13 +2,14 @@
   <div class="review-form">
     <p v-on:click="handleBack">X</p>
     <h3>My Review for {{ bookName }}</h3>
+    <h4 class="error" v-if="error">Wrong Inputs</h4>
     <form>
       <label>Review Title</label><br/>
       <input v-model="title" placeholder="Enter review title"><br/>
       <label>Review</label><br/>
       <textarea v-model="content" placeholder="Enter review content"></textarea><br/>
       <label>Rating</label><br/>
-      <input v-model="rating" type="number" placeholder="Enter review rating"><br/>
+      <input v-model="rating" type="number" min="0" max="5" step="1" placeholder="Enter review rating"><br/>
       <br/>
       <button v-on:click="handleSubmit">Post Review</button>
     </form>
@@ -22,7 +23,8 @@ export default {
     bookName: String,
     handleBack: Function,
     bookId: Number,
-    submitReview: Function
+    submitReview: Function,
+    error: Boolean
   },
   data () {
     return {
