@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { BASE_URL } from "../App"
+
 export default {
   name: 'SignUp',
   props: {
@@ -40,7 +42,7 @@ export default {
         password: this.password,
         password_confirmation: this.passwordConf
       }
-      fetch(`http://localhost:3000/users`, {
+      fetch(`${BASE_URL}/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

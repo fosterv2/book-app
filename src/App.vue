@@ -8,6 +8,8 @@
 <script>
 import NavBar from './components/NavBar'
 
+export const BASE_URL = "http://localhost:3000"
+
 export default {
   name: 'App',
   components: {
@@ -29,14 +31,14 @@ export default {
     }
   },
   mounted: function () {
-    fetch('http://localhost:3000/books')
+    fetch(`${BASE_URL}/books`)
       .then(resp => resp.json())
       .then(books => {
         this.books = books
       })
     const token = localStorage.getItem("token")
     if (token) {
-      fetch(`http://localhost:3000/auth`, {
+      fetch(`${BASE_URL}/auth`, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",

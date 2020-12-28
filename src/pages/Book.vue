@@ -34,6 +34,7 @@
 <script>
 import ReviewCard from '../components/ReviewCard'
 import ReviewForm from '../components/ReviewForm'
+import { BASE_URL } from "../App"
 
 export default {
   name: 'Book',
@@ -60,7 +61,7 @@ export default {
     }
   },
   mounted: function () {
-    fetch(`http://localhost:3000/reviews/${this.bookId}`)
+    fetch(`${BASE_URL}/reviews/${this.bookId}`)
       .then(resp => resp.json())
       .then(reviews => {
         this.reviews = reviews
@@ -72,7 +73,7 @@ export default {
     },
     submitReview: function (body) {
       this.formCondition = false
-      fetch(`http://localhost:3000/reviews`, {
+      fetch(`${BASE_URL}/reviews`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

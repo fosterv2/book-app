@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { BASE_URL } from "../App"
+
 export default {
   name: 'SignIn',
   props: {
@@ -32,7 +34,7 @@ export default {
         username: this.username,
         password: this.password
       }
-      fetch(`http://localhost:3000/auth`, {
+      fetch(`${BASE_URL}/auth`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
