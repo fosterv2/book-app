@@ -2,7 +2,7 @@
   <div class="book" v-if='book'>
     <h1>{{ book.title }}</h1>
     <h4>By: {{ book.author_name }}</h4>
-    <h4>Average Rating: {{ averageRating }}</h4>
+    <h4><RatingStars :rating="averageRating" /> ({{ averageRating }})</h4>
     <div class="book-info">
       <img v-if="defaultPicture" src="https://i.imgur.com/YtTSpfV.png">
       <img v-else :src='book.img_url'>
@@ -36,6 +36,7 @@
 <script>
 import ReviewCard from '../components/ReviewCard'
 import ReviewForm from '../components/ReviewForm'
+import RatingStars from '../components/RatingStars'
 import { BASE_URL } from "../App"
 
 export default {
@@ -46,7 +47,8 @@ export default {
   },
   components: {
     ReviewCard,
-    ReviewForm
+    ReviewForm,
+    RatingStars
   },
   data () {
     return {
@@ -64,7 +66,7 @@ export default {
     },
     averageRating: function () {
       if (this.reviews.length > 0) {
-        return (this.reviews.reduce((accum, review) => accum + review.rating, 0) / this.reviews.length).toFixed(2)
+        return Math.round((this.reviews.reduce((accum, review) => accum + review.rating, 0) / this.reviews.length) * 10) / 10
       } else {
         return 0
       }
