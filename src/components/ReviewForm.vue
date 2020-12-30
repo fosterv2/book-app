@@ -52,9 +52,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 div {
-  width: 50%;
-  margin: 10px 0 10px 24.5%;
-  /* top, right, bottom, left */
+  width: 100%;
+  margin-left: 10px;
   border: 3px solid #2c3e50;
   border-radius: 10px;
   padding-bottom: 15px;
@@ -71,6 +70,6 @@ p {
 }
 
 h3 {
-  margin-top: -30px;
+  margin-top: -25px;
 }
 </style>

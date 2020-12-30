@@ -9,16 +9,18 @@
       <p>{{ book.blurb }}</p>
     </div>
     <div class="lower-book">
-      <ReviewForm
-        v-if="formCondition"
-        :bookName="book.title"
-        :handleBack="toggleFormCondition"
-        :bookId="book.id"
-        :submitReview="submitReview"
-        :error="error"
-        :user="user"
-      />
-      <button v-else v-on:click="toggleFormCondition">Add Review</button>
+      <div class="new-review">
+        <ReviewForm
+          v-if="formCondition"
+          :bookName="book.title"
+          :handleBack="toggleFormCondition"
+          :bookId="book.id"
+          :submitReview="submitReview"
+          :error="error"
+          :user="user"
+        />
+        <button v-else v-on:click="toggleFormCondition">Add Review</button>
+      </div>
       <div class="reviews">
         <h3>Reviews</h3>
         <ReviewCard
@@ -125,6 +127,7 @@ h1 {
 
 img {
   max-height: 195px;
+  max-width: 175px;
   margin-left: 70px;
   margin-right: 20px;
   margin-top: 50px;
@@ -135,12 +138,18 @@ img {
   margin: 50px;
 }
 
-img {
-  max-width: 175px;
-}
-
-/* .lower-book {
+.lower-book {
   display: flex;
   justify-content: space-around;
-} */
+}
+
+.new-review {
+  margin-top: 70px;
+  width: 45%;
+}
+
+.reviews {
+  width: 60%;
+  margin-left: 6%;
+}
 </style>
