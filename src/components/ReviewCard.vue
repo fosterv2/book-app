@@ -2,6 +2,7 @@
   <div class="review-card">
     <p class="rating">
       <RatingStars :rating="review.rating" />
+      <span>{{ review.user.username }}</span>
     </p>
     <h4>{{ review.title }}</h4>
     <p>{{ review.content }}</p>

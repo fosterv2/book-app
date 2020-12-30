@@ -16,6 +16,7 @@
         :bookId="book.id"
         :submitReview="submitReview"
         :error="error"
+        :user="user"
       />
       <button v-else v-on:click="toggleFormCondition">Add Review</button>
       <div class="reviews">
@@ -44,7 +45,7 @@ export default {
   props: {
     books: Array,
     bookId: String,
-    loggedIn: Boolean
+    user: Object
   },
   components: {
     ReviewCard,
@@ -82,7 +83,7 @@ export default {
   },
   methods: {
     toggleFormCondition: function () {
-      if (this.loggedIn) {
+      if (this.user.id) {
         this.formCondition = !this.formCondition
       } else {
         alert("You must be signed in to write a review!")

@@ -24,7 +24,8 @@ export default {
     handleBack: Function,
     bookId: Number,
     submitReview: Function,
-    error: Boolean
+    error: Boolean,
+    user: Object
   },
   data () {
     return {
@@ -41,7 +42,7 @@ export default {
         content: this.content,
         rating: this.rating,
         book_id: this.bookId,
-        user_id: 1  // need to add this when there are users
+        user_id: this.user.id
       })
     }
   }
