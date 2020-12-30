@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavBar :user='user' :signOut='signOut' />
-    <router-view :books='books' :user='user' :setUser='setUser'></router-view>
+    <router-view :books='books' :loggedIn='loggedIn' :setUser='setUser'></router-view>
   </div>
 </template>
 
@@ -28,6 +28,11 @@ export default {
     },
     setUser: function (user) {
       this.user = user
+    }
+  },
+  computed: {
+    loggedIn: function () {
+      return !!this.user.id
     }
   },
   mounted: function () {

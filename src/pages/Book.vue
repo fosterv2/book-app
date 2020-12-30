@@ -43,7 +43,8 @@ export default {
   name: 'Book',
   props: {
     books: Array,
-    bookId: String
+    bookId: String,
+    loggedIn: Boolean
   },
   components: {
     ReviewCard,
@@ -81,7 +82,11 @@ export default {
   },
   methods: {
     toggleFormCondition: function () {
-      this.formCondition = !this.formCondition
+      if (this.loggedIn) {
+        this.formCondition = !this.formCondition
+      } else {
+        alert("You must be signed in to write a review!")
+      }
     },
     submitReview: function (body) {
       fetch(`${BASE_URL}/reviews`, {
