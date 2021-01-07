@@ -8,7 +8,8 @@
 <script>
 import NavBar from './components/NavBar'
 
-export const BASE_URL = "http://localhost:3000"
+// export const BASE_URL = "http://localhost:3000"
+export const BASE_URL = "https://love-books-backend.herokuapp.com/"
 
 export default {
   name: 'App',
